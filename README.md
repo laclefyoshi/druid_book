@@ -1,2 +1,3 @@
 # druid_book
-Druid
+
+Druidによる時系列データ解析入門のリポジトリ
