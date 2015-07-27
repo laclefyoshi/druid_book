@@ -1,0 +1,17 @@
+{"queryType": "topN",
+ "dataSource": "test_source",
+ "dimension": "domain",
+ "threshold": 3,
+ "metric": "avg",
+ "granularity": "all",
+ "filter": {"type": "regex", "dimension": "id", "pattern": ".*7.*"},
+ "aggregations": [
+   {"type": "longSum", "name": "total", "fieldName": "added"},
+   {"type": "count", "name": "counter"}
+ ],
+ "postAggregations": [
+   {"type": "arithmetic", "fn": "/", "name": "avg",
+    "fields": [{"type": "fieldAccess", "fieldName": "total"},
+               {"type": "fieldAccess", "fieldName": "counter"}]}
+ ],
+ "intervals": ["2015-05-03T07:55:00.000Z/2015-05-03T08:40:00.000Z"]}

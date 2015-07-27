@@ -1,0 +1,15 @@
+{"queryType": "timeseries",
+ "dataSource": "test_source",
+ "granularity": "all",
+ "filter": {"type": "selector", "dimension": "domain", "value": "fr"},
+ "aggregations": [
+   {"type": "longSum", "name": "total", "fieldName": "added"},
+   {"type": "count", "name": "counter"}
+ ],
+ "postAggregations": [
+   {"type": "arithmetic", "fn": "/", "name": "avg",
+    "fields": [{"type": "fieldAccess", "fieldName": "total"},
+               {"type": "fieldAccess", "fieldName": "counter"}]}
+ ],
+ "intervals": ["2015-05-03T07:55:00.000Z/2015-05-03T08:40:00.000Z"]}
+

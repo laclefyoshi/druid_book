@@ -1,0 +1,17 @@
+{"queryType": "groupBy",
+ "dataSource": "test_source",
+ "dimensions": ["domain"],
+ "granularity": "all",
+ "filter": {"type": "regex", "dimension": "id", "pattern": ".*7.*"},
+ "aggregations": [
+   {"type": "longSum", "name": "total", "fieldName": "added"},
+   {"type": "count", "name": "counter"}
+ ],
+ "limitSpec": {"type": "default", "limit": 10, "columns": ["total"]},
+ "having": {"type": "greaterThan", "aggregation": "counter", "value": 1},
+ "postAggregations": [
+   {"type": "arithmetic", "fn": "/", "name": "avg",
+    "fields": [{"type": "fieldAccess", "fieldName": "total"},
+               {"type": "fieldAccess", "fieldName": "counter"}]}
+ ],
+ "intervals": ["2015-05-03T07:55:00.000Z/2015-05-03T08:40:00.000Z"]}

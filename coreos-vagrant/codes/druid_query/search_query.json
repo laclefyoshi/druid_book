@@ -1,0 +1,10 @@
+{"queryType": "search",
+ "dataSource": "test_source",
+ "granularity": "all",
+ "searchDimensions": ["id"],
+ "query": {
+   "type": "insensitive_contains",
+   "value": "cc"
+ },
+ "sort": {"type": "lexicographic"},
+ "intervals": ["2015-05-03T07:55:00.000Z/2015-05-03T07:56:00.000Z"]}

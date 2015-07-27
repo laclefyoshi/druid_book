@@ -1,0 +1,7 @@
+ {"queryType": "select",
+  "dataSource": "test_source",
+  "dimensions":[],
+  "metrics":[],
+  "granularity": "all",
+  "intervals": ["2015-05-03T07:52:00/2015-05-03T07:53:00"],
+  "pagingSpec":{"pagingIdentifiers": {}, "threshold": 10}}
